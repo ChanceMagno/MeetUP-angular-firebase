@@ -1,0 +1,25 @@
+.aboutBanner {
+
+  background-image: url('https://i.ytimg.com/vi/AFtUpMTs4vI/maxresdefault.jpg');
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10px;
+
+}
+
+.aboutHeader {
+  text-align: center;
+  font-family: entangled;
+}
+
+.aboutContent {
+  text-align: center;
+  font-family: quantum mechanics;
+  font-size: 150%;
+}
+
+footer {
+  background-color: #424242;
+}
