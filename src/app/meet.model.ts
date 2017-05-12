@@ -1,4 +1,12 @@
 export class Meet {
-  public peopleGoing: number = 0;
-  constructor (public title: string, public location: string, public time: string, public date: string, creator: string, image: string, info: string, creatorImage: string) {}
+  
+  constructor (
+    public title: string,
+    public location: string,
+    public time: string,
+    public date: string,
+    public creator: string,
+    public image: string,
+    public info: string,
+    public attendingGoal: number) { }
 }

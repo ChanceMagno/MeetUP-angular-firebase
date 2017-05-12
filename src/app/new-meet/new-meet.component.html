@@ -1,76 +1,57 @@
-<div class="row">
+<div class="row addForm">
     <form class="col s12" [formGroup]="newMeetForm">
       <div class="row">
         <div class="input-field col s6">
-          <textarea id="name" class="materialize-textarea" formControlName="name"></textarea>
-          <label for="name">Name</label>
+          <textarea id="title" class="materialize-textarea" formControlName="title"></textarea>
+          <label for="title">Title</label>
         </div>
         <div class="input-field col s6">
-          <textarea id="people" class="materialize-textarea" formControlName="people"></textarea>
-          <label for="people">Founder(s)</label>
+          <textarea id="location" class="materialize-textarea" formControlName="location"></textarea>
+          <label for="location">Meet Location</label>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s6 black-text">
-          <select materialize="material_select" [materializeSelectOptions]="categories" formControlName="category">
-              <option value="" disabled selected>Choose your option</option>
-              <option *ngFor="let name of categories" [value]="name">{{name}}</option>
-          </select>
-          <label>Category</label>
-        </div>
-        <div class="input-field col s6">
-          <select materialize="material_select" [materializeSelectOptions]="type" formControlName="type">
-              <option value="" disabled selected>Choose your option</option>
-              <option *ngFor="let name of type" [value]="name">{{name}}</option>
-          </select>
-          <label>Type</label>
-        </div>
-      </div>
+      <br>
       <div class="row">
         <div class="input-field col s12">
-          <textarea rows="25" id="description" type="text" class="validate materialize-textarea" formControlName="description" data-length="500"></textarea>
-          <label for="description">Description</label>
+          <textarea rows="25" id="info" type="info" class="validate materialize-textarea" formControlName="info" data-length="500"></textarea>
+          <label for="time">Meet Info</label>
         </div>
       </div>
-      <hr>
+      <br>
       <div class="row">
-        <div class="input-field col s12">
-          <textarea id="moneyDesc" type="text" class="validate materialize-textarea" formControlName="moneyDesc"></textarea>
-          <label for="moneyDesc">What the Money is for</label>
+        <div class="input-field col s6">
+          <input id="time" type="time" class="timepicker" formControlName="time">
+          <label class="active" for="time">Time of Meet</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="date" type="text" class="datepicker" formControlName="date" materialize="pickadate">
+          <label for="date">Date of Meet</label>
         </div>
       </div>
+      <br>
       <div class="row">
         <div class="input-field col s6">
-          <input id="goal" type="number" class="validate" formControlName="goal">
-          <label for="goal">Goal Amount</label>
+          <input id="creator" type="number" class="validate" formControlName="creator">
+          <label for="creator">Name of Meet Organizer</label>
         </div>
-        <div class="input-field col s6">
-          <input id="location" type="text" class="validate" formControlName="location">
-          <label for="location">Invention Location</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="rewards" type="text" class="validate" formControlName="rewards">
-          <label for="rewards">Rewards</label>
-        </div>
-        <div class="input-field col s6">
-        <input id="date" type="text" class="datepicker" formControlName="date" materialize="pickadate">
-          <label for="date">End Date</label>
-        </div>
-      </div>
-      <div class="row">
         <div class="input-field col s6">
           <input id="image" type="url" class="validate" formControlName="image">
-          <label for="image">Image URL</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="video" type="url" class="validate" formControlName="video">
-          <label for="video">Video Url</label>
+          <label for="image">Image URL of Location</label>
         </div>
       </div>
+      <br>
       <div class="row">
-        <button class="btn waves-effect waves-light" (click)="addProject()">Add Project</button>
+        <div class="input-field col s12">
+          <label for="attendingGoal">Turn Out Goal</label>
+          <br>
+          <p class="range-field">
+            <input type="range" id="attendingGoal" min="2" max="1000" step="2" formControlName="attendingGoal"/>
+          </p>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <button class="btn waves-effect waves-light" (click)="addMeet()">Add Meet</button>
       </div>
     </form>
   </div>
