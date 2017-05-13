@@ -1,3 +1,9 @@
 .addForm {
   margin-top: 80px;
 }
+
+.currentSelectedGoal {
+  text-align: center;
+  font-size: 20px;
+  color: #26a69a;
+}

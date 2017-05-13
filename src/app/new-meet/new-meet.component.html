@@ -31,7 +31,7 @@
       <br>
       <div class="row">
         <div class="input-field col s6">
-          <input id="creator" type="number" class="validate" formControlName="creator">
+          <input id="creator" type="text" class="validate" formControlName="creator">
           <label for="creator">Name of Meet Organizer</label>
         </div>
         <div class="input-field col s6">
@@ -45,13 +45,28 @@
           <label for="attendingGoal">Turn Out Goal</label>
           <br>
           <p class="range-field">
-            <input type="range" id="attendingGoal" min="2" max="1000" step="2" formControlName="attendingGoal"/>
+            <input [(ngModel)]="attendingGoal" (change)="showGoal(attendingGoal)" type="range" id="attendingGoal" min="2" max="1000" step="2" formControlName="attendingGoal"/>
           </p>
+          <div class="currentSelectedGoal">
+            <strong class="test">{{selectedGoal}}</strong>
+          </div>
+
         </div>
       </div>
+
       <br>
-      <div class="row">
-        <button class="btn waves-effect waves-light" (click)="addMeet()">Add Meet</button>
+      <div class="row formButton">
+        <button class="btn waves-effect waves-light center" (click)="addMeet()">Add Meet</button>
       </div>
     </form>
+  </div>
+
+  <div id="loseModal" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="warnAction">
+    <div class="modal-content">
+      <h4 class="center-align">Uh Oh! You Forgot Something</h4>
+      <p class="center-align">Please check over the form, it appears you forgot something</p>
+    </div>
+    <div class="modal-footer">
+      <a class="waves-effect modal-close waves-green btn-flat center-align" (click)="warnModal()">Play Again</a>
+    </div>
   </div>
