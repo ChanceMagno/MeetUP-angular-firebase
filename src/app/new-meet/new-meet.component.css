@@ -7,3 +7,47 @@
   font-size: 20px;
   color: #26a69a;
 }
+
+.formButton {
+  text-align: center;
+  flex: initial;
+}
+
+.addBanner {
+  background-image: url('http://media.mlive.com/auto_impact/photo/2013-dodge-dart-instrument-clusterjpg-dc246aa39140d287.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10px;
+}
+
+.addHeader {
+  text-align: center;
+  font-family: entangled;
+}
+
+
+footer {
+  background-color: #424242;
+}
+
+.page {
+  background-color: #e0e0e0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.btn-large {
+  margin-top: 25px;
+  background-color: #424242 !important;
+  color: red;
+}

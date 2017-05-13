@@ -1,4 +1,13 @@
-<div class="row addForm">
+<div class="addPage">
+<header>
+  <div class="row addBanner">
+  </div>
+  <div class="addHeader">
+    <h1>Add A New Meet Up!</h1>
+  </div>
+</header>
+<main>
+  <div class="row addForm">
     <form class="col s12" [formGroup]="newMeetForm">
       <div class="row">
         <div class="input-field col s6">
@@ -50,23 +59,37 @@
           <div class="currentSelectedGoal">
             <strong class="test">{{selectedGoal}}</strong>
           </div>
-
         </div>
       </div>
-
       <br>
       <div class="row formButton">
         <button class="btn waves-effect waves-light center" (click)="addMeet()">Add Meet</button>
       </div>
     </form>
   </div>
-
-  <div id="loseModal" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="warnAction">
+  <div id="warnModal" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="warnAction">
     <div class="modal-content">
       <h4 class="center-align">Uh Oh! You Forgot Something</h4>
-      <p class="center-align">Please check over the form, it appears you forgot something</p>
+      <p class="center-align">Please check over the form, missed a field or two....</p>
     </div>
     <div class="modal-footer">
-      <a class="waves-effect modal-close waves-green btn-flat center-align" (click)="warnModal()">Play Again</a>
+      <a class="waves-effect modal-close waves-green btn-flat center-align" (click)="warnModal()">Review Form</a>
     </div>
   </div>
+</main>
+<footer class="page-footer">
+<div class="container">
+  <div class="row">
+    <div class="col l6 s12">
+    </div>
+    <div class="col l4 offset-l2 s12">
+    </div>
+  </div>
+</div>
+<div class="footer-copyright">
+  <div class="container">
+  © 2017 Copyright Text
+  </div>
+</div>
+</footer>
+</div>
