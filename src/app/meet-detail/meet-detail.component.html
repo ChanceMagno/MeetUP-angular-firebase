@@ -1,3 +1,49 @@
-<p>
-  meet-detail works!
-</p>
+<div class="page">
+  <header>
+    <div class="banner">
+    </div>
+    <div class="header row">
+      <h1>{{selectedMeet?.title}}</h1>
+    </div>
+  </header>
+  <body>
+    <div class="row detailContent">
+        <div class="row">
+          <div class="col m8 offset-m2">
+            {{selectedMeet?.info}}
+            <br>
+            <div class="image center">
+              <img src={{selectedMeet?.image}} alt={{selectedMeet?.title}}>
+            </div>
+          </div>
+          <div class="col m2 details">
+            <h5 class="detailHeader">Details</h5>
+            <br>
+             <i class="material-icons">location_on</i>{{selectedMeet?.location}}
+            <br>
+            <br>
+            <i class="material-icons">query_builder</i>{{selectedMeet?.time}}
+            <br>
+            <p><strong>Expected Turn Out: </strong>{{selectedMeet?.attendingGoal}}</p>
+            <br>
+            <p><strong>Organizer(s): </strong>{{selectedMeet?.creator}}</p>
+          </div>
+        </div>
+    </div>
+  </body>
+  <footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+      </div>
+      <div class="col l4 offset-l2 s12">
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2017 Copyright Text
+    </div>
+  </div>
+  </footer>
+</div>

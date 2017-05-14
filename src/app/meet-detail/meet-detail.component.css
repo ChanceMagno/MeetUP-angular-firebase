@@ -1,0 +1,53 @@
+footer {
+  background-color: #424242;
+}
+
+.page {
+  background-color: #e0e0e0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.banner {
+  background-image: url('http://cdn.funcheap.com/wp-content/uploads/2014/09/905940_988765227832092_7861068247321275664_o1.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10px;
+}
+
+.header {
+  margin-top: 50px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+span {
+  flex-flow: column;
+  text-align: center;
+}
+
+.detailHeader {
+  text-decoration: underline;
+}
+
+.details {
+  align-items: center;
+}
+
+.image {
+  margin-top: 25px;
+}
+
+img {
+  height: 450px;
+  width: auto;
+}
