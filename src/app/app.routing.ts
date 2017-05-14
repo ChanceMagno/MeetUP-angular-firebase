@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NewMeetComponent } from './new-meet/new-meet.component';
+import { MeetDetailComponent } from './meet-detail/meet-detail.component';
 
 
 const appRoutes: Routes = [
@@ -17,6 +18,10 @@ const appRoutes: Routes = [
     {
       path: 'new-meet',
       component: NewMeetComponent
+    },
+    {
+      path: 'meets/:id',
+      component: MeetDetailComponent
     }
 ];
 

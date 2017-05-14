@@ -16,4 +16,13 @@ export class MeetService {
     this.meets.push(newMeet);
   }
 
+  getMeets(){
+    return this.meets;
+  }
+
+
+  getMeetById(meetId) {
+    return this.database.object('meets/' + meetId);
+  }
+
 }

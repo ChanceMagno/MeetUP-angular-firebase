@@ -1,0 +1,21 @@
+.container {
+  margin-top: 50px;
+}
+
+.dateTime {
+  text-align: right;
+}
+
+.banner {
+  background-image: url('http://cdn.funcheap.com/wp-content/uploads/2014/09/905940_988765227832092_7861068247321275664_o1.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10px;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #424242;
+}
