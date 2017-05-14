@@ -13,6 +13,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MeetService } from './meet.service';
 import { MeetDetailComponent } from './meet-detail/meet-detail.component';
+import { EditMeetComponent } from './edit-meet/edit-meet.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     HomeComponent,
     AboutComponent,
     NewMeetComponent,
-    MeetDetailComponent
+    MeetDetailComponent,
+    EditMeetComponent
 
   ],
   imports: [

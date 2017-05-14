@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NewMeetComponent } from './new-meet/new-meet.component';
 import { MeetDetailComponent } from './meet-detail/meet-detail.component';
+import { EditMeetComponent } from './edit-meet/edit-meet.component';
 
 
 const appRoutes: Routes = [
@@ -22,6 +23,10 @@ const appRoutes: Routes = [
     {
       path: 'meets/:id',
       component: MeetDetailComponent
+    },
+    {
+      path:'update/:id',
+      component: EditMeetComponent
     }
 ];
 

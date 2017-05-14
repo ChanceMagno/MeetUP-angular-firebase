@@ -1,0 +1,95 @@
+<div class="addPage">
+<header>
+  <div class="row addBanner">
+  </div>
+  <div class="addHeader">
+    <h1>Add A New Meet Up!</h1>
+  </div>
+</header>
+<main>
+  <div class="row addForm">
+    <form class="col s12" >
+      <div class="row">
+        <div class="input-field col s6">
+          <textarea value={{selectedMeet?.title}} id="title" class="materialize-textarea" #title></textarea>
+          <label class="active" for="title">Title</label>
+        </div>
+        <div class="input-field col s6">
+          <textarea value={{selectedMeet?.location}} id="location" class="materialize-textarea" #location></textarea>
+          <label class="active" for="location">Meet Location</label>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea value={{selectedMeet?.info}} rows="25" id="info" type="info" class="validate materialize-textarea"  data-length="500" #info></textarea>
+          <label class="active" for="time">Meet Info</label>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="input-field col s6">
+          <input value={{selectedMeet?.time}} id="time" type="time" class="timepicker" #time>
+          <label class="active" class="active" for="time">Time of Meet</label>
+        </div>
+        <div class="input-field col s6">
+          <input value={{selectedMeet?.date}} id="date" type="text" class="datepicker"  materialize="pickadate" #date>
+          <label class="active" for="date">Date of Meet</label>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="input-field col s6">
+          <input value={{selectedMeet?.creator}} id="creator" type="text" class="validate" #creator>
+          <label class="active" for="creator">Name of Meet Organizer</label>
+        </div>
+        <div class="input-field col s6">
+          <input value={{selectedMeet?.image}} id="image" type="url" class="validate" #image>
+          <label class="active" for="image">Image URL of Location</label>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="input-field col s12">
+          <label class="active" for="attendingGoal">Turn Out Goal</label>
+          <br>
+          <p class="range-field">
+            <input value={{selectedMeet?.attendingGoal}} type="range" id="attendingGoal" min="2" max="1000" step="2" #attendingGoal/>
+          </p>
+          <div class="currentSelectedGoal">
+            <strong class="test">{{selectedGoal}}</strong>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row formButton">
+        <button class="btn waves-effect waves-light center" (click)='update(title.value, location.value, time.value, date.value, creator.value, image.value, info.value, attendingGoal.value)'>Update Meet</button>
+      </div>
+    </form>
+  </div>
+  <div id="warnModal" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="warnAction">
+    <div class="modal-content">
+      <h4 class="center-align">Uh Oh! You Forgot Something</h4>
+      <p class="center-align">Please check over the form, you may have missed a field or two....</p>
+    </div>
+    <div class="modal-footer">
+      <a class="waves-effect modal-close waves-green btn-flat center-align" (click)="warnModal()">Review Form</a>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+<div class="container">
+  <div class="row">
+    <div class="col l6 s12">
+    </div>
+    <div class="col l4 offset-l2 s12">
+    </div>
+  </div>
+</div>
+<div class="footer-copyright">
+  <div class="container">
+  © 2017 Copyright Text
+  </div>
+</div>
+</footer>
+</div>

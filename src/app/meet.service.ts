@@ -30,4 +30,18 @@ export class MeetService {
     meetEntryInFirebase.remove();
   }
 
+  updateMeet(meet, meetId){
+    var meetInFirebase = this.getMeetById(meetId);
+    meetInFirebase.update({
+      title: meet.title,
+      location: meet.location,
+      time: meet.time,
+      date: meet.date,
+      creator: meet.creator,
+      image: meet.image,
+      info: meet.info,
+      attendingGoal: meet.attendingGoal,
+    })
+  }
+
 }

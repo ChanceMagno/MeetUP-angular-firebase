@@ -15,6 +15,7 @@ export class MeetDetailComponent implements OnInit {
   meetId: string;
   selectedMeet: Meet;
   warnAction = new EventEmitter;
+
   constructor(private route: ActivatedRoute, private location: Location, private meetService: MeetService, private router: Router) { }
 
   ngOnInit() {
@@ -43,11 +44,11 @@ export class MeetDetailComponent implements OnInit {
   }
 
   deleteVerified(){
-    // this.meetService.deleteMeet(this.meetId);
+    this.meetService.deleteMeet(this.meetId);
   }
 
   editMeet(){
-
+    this.router.navigate(['update/', this.meetId]);
   }
 
 }

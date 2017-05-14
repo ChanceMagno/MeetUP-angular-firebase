@@ -23,4 +23,9 @@ export class HomeComponent implements OnInit {
   this.router.navigate(['meets', clickedMeet.$key]);
 }
 
+  editMeet(clickedMeet) {
+
+    this.router.navigate(['update', clickedMeet.$key])
+  }
+
 }
