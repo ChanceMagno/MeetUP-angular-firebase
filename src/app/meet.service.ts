@@ -25,4 +25,9 @@ export class MeetService {
     return this.database.object('meets/' + meetId);
   }
 
+  deleteMeet(id){
+    var meetEntryInFirebase = this.getMeetById(id);
+    meetEntryInFirebase.remove();
+  }
+
 }

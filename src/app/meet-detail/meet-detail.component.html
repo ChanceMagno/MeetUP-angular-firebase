@@ -4,6 +4,15 @@
     </div>
     <div class="header row">
       <h1>{{selectedMeet?.title}}</h1>
+      <div class="fixed-action-btn toolbar">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">supervisor_account</i>
+    </a>
+    <ul>
+      <li class="waves-effect waves-light"><a (click)='editMeet()'><i class="material-icons">edit</i></a></li>
+      <li class="waves-effect waves-light"><a (click)='deleteMeet()'><i class="material-icons">delete</i></a></li>
+    </ul>
+  </div>
     </div>
   </header>
   <body>
@@ -25,10 +34,19 @@
             <i class="material-icons">query_builder</i>{{selectedMeet?.time}}
             <br>
             <p><strong>Expected Turn Out: </strong>{{selectedMeet?.attendingGoal}}</p>
-            <br>
             <p><strong>Organizer(s): </strong>{{selectedMeet?.creator}}</p>
           </div>
         </div>
+    </div>
+    <div id="warnModal" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="warnAction">
+      <div class="modal-content">
+        <h4 class="center-align">Delete This Meet?</h4>
+        <p>This will permanently delete this meet.</p>
+      </div>
+      <div class="modal-footer">
+        <a routerLink='' class="waves-effect modal-close waves-green btn-flat left-align" (click)="deleteVerified()">Delete</a>
+        <a class="waves-effect modal-close waves-green btn-flat left-align" (click)="warnModal()">Cancel</a>
+      </div>
     </div>
   </body>
   <footer class="page-footer">

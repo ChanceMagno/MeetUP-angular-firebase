@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
@@ -14,7 +14,7 @@ export class MeetDetailComponent implements OnInit {
 
   meetId: string;
   selectedMeet: Meet;
-
+  warnAction = new EventEmitter;
   constructor(private route: ActivatedRoute, private location: Location, private meetService: MeetService, private router: Router) { }
 
   ngOnInit() {
@@ -33,5 +33,21 @@ export class MeetDetailComponent implements OnInit {
         dataLastSeen.attendingGoal)
     })
   }
-  
+
+  warnModal() {
+  this.warnAction.emit({action:"modal",params:['open']});
+  }
+
+  deleteMeet(){
+    this.warnModal();
+  }
+
+  deleteVerified(){
+    // this.meetService.deleteMeet(this.meetId);
+  }
+
+  editMeet(){
+
+  }
+
 }
