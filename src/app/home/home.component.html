@@ -6,7 +6,17 @@
   </header>
   <main>
     <div class="container">
-      <div *ngFor="let meet of meets | async">
+      <!-- Dropdown Trigger -->
+  <a class='dropdown-button btn' data-beloworigin="true" data-activates='dropdown1'>Search By</a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a (click)="filterBy('time', '09:00')">one</a></li>
+    <li><a (click)="filterBy('All')">two</a></li>
+    <li class="divider"></li>
+    <li><a (click)="filterBy('none', 'test')">three</a></li>
+  </ul>
+      <div *ngFor="let meet of meets | async | filter:filterSelected:value">
         <div class="col s10 m6 offset-s1">
           <h2 class="header">{{meet.title}}</h2>
           <p class="dateTime">{{meet.time}} on {{meet.date}}</p>

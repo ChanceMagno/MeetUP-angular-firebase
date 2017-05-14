@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MeetService } from './meet.service';
 import { MeetDetailComponent } from './meet-detail/meet-detail.component';
 import { EditMeetComponent } from './edit-meet/edit-meet.component';
+import { FilterPipe } from './filter.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -29,7 +30,8 @@ export const firebaseConfig = {
     AboutComponent,
     NewMeetComponent,
     MeetDetailComponent,
-    EditMeetComponent
+    EditMeetComponent,
+    FilterPipe
 
   ],
   imports: [

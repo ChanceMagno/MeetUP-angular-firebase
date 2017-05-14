@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, AfterViewInit } from '@angular/core';
 import { Meet } from '../meet.model';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { MeetService } from '../meet.service';
 import { Router } from '@angular/router';
 
+declare var jQuery: any;
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,9 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   meets: FirebaseListObservable<any[]>;
+  filterSelected: string = 'All';
+  openAction = new EventEmitter;
+  value: string;
 
   constructor(private router: Router, private meetService: MeetService) { }
 
@@ -27,5 +31,19 @@ export class HomeComponent implements OnInit {
 
     this.router.navigate(['update', clickedMeet.$key])
   }
+
+  openDropDown() {
+  this.openAction.emit({action:"dropdown",params:['open']});
+  }
+
+  ngAfterViewInit() {
+ jQuery('.collapsible').collapsible();
+}
+
+filterBy(filter, value){
+  console.log(filter, value);
+  this.filterSelected = filter;
+  this.value = value;
+}
 
 }
