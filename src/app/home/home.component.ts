@@ -3,6 +3,8 @@ import { Meet } from '../meet.model';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { MeetService } from '../meet.service';
 import { Router } from '@angular/router';
+import { FilterPipe } from '../filter.pipe';
+import { SearchByPipe } from '../search-by.pipe';
 
 declare var jQuery: any;
 
@@ -16,6 +18,7 @@ export class HomeComponent implements OnInit {
   filterSelected: string = 'All';
   openAction = new EventEmitter;
   value: string;
+  date: string = "date";
 
   constructor(private router: Router, private meetService: MeetService) { }
 

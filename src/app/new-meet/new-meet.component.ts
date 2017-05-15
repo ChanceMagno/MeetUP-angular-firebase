@@ -4,6 +4,7 @@ import {MaterializeAction} from 'angular2-materialize';
 import { Meet } from '../meet.model';
 import { MeetService } from '../meet.service';
 import { MaterializeModule } from "angular2-materialize";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-meet',
@@ -15,7 +16,7 @@ export class NewMeetComponent implements OnInit {
   selectedGoal: number;
 
   warnAction = new EventEmitter<string|MaterializeAction>();
-  constructor(private fb: FormBuilder, private MeetService: MeetService) { }
+  constructor(private fb: FormBuilder, private MeetService: MeetService,  private router: Router) { }
 
 
   ngOnInit() {
@@ -47,6 +48,8 @@ export class NewMeetComponent implements OnInit {
       var newMeet = new Meet(title, location, time, date, creator, image, info, attendingGoal);
       this.MeetService.saveMeet(newMeet);
       this.newMeetForm.reset();
+      this.router.navigate([''])
+
       }
     }
   }

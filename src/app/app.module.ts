@@ -15,6 +15,7 @@ import { MeetService } from './meet.service';
 import { MeetDetailComponent } from './meet-detail/meet-detail.component';
 import { EditMeetComponent } from './edit-meet/edit-meet.component';
 import { FilterPipe } from './filter.pipe';
+import { SearchByPipe } from './search-by.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,7 +32,8 @@ export const firebaseConfig = {
     NewMeetComponent,
     MeetDetailComponent,
     EditMeetComponent,
-    FilterPipe
+    FilterPipe,
+    SearchByPipe
 
   ],
   imports: [

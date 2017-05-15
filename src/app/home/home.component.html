@@ -1,21 +1,21 @@
 <div class="page">
   <header>
     <div class="banner">
-
     </div>
   </header>
   <main>
     <div class="container">
-      <!-- Dropdown Trigger -->
-  <a class='dropdown-button btn' data-beloworigin="true" data-activates='dropdown1'>Search By</a>
-
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a (click)="filterBy('time', '09:00')">one</a></li>
-    <li><a (click)="filterBy('All')">two</a></li>
-    <li class="divider"></li>
-    <li><a (click)="filterBy('none', 'test')">three</a></li>
-  </ul>
+      <div class="row filterBox">
+        <ul class="collapsible " data-collapsible="accordion">
+        <div class="collapsible-header filter"><a (click)="filterOnClick(All, nothing)">All Animals</a></div>
+         <li>
+         <div class="collapsible-header">Date</div>
+           <div class="collapsible-body">
+             <button md-button class="filterButtons toastPositionLeft"></button>
+           </div>
+         </li>
+        </ul>
+      </div>
       <div *ngFor="let meet of meets | async | filter:filterSelected:value">
         <div class="col s10 m6 offset-s1">
           <h2 class="header">{{meet.title}}</h2>
@@ -30,7 +30,6 @@
               </div>
               <div class="card-action">
                 <a (click)='viewMeet(meet)'>More Info</a>
-                <a (click)='editMeet(meet)'>test</a>
               </div>
             </div>
           </div>

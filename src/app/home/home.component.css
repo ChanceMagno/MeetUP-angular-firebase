@@ -33,3 +33,12 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+.btn, .btn-large {
+  background-color: #424242;
+
+}
+
+#dropdown1 a{
+  color: black;
+}
