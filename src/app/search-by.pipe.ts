@@ -7,13 +7,17 @@ import { Meet } from './meet.model';
 })
 export class SearchByPipe implements PipeTransform {
 
-  transform(input: Meet [], variable){
-
-    var meetSet = new Set();
-      for (var i=0; i<input.length; i++){
-        meetSet.add(input[i][variable]);
-      }
-      return meetSet;
+  transform(meets: any, term: any): any {
+    var title: string;
+    var output: any;
+    if (term === undefined){
+      return meets;
+    } else {
+      return meets.filter(function(meets){
+        output = meets.title.toLowerCase().includes(term.toLowerCase());
+        return output;
+      })
+    }
   }
 
 }

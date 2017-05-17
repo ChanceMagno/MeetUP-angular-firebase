@@ -5,18 +5,22 @@
   </header>
   <main>
     <div class="container">
-      <div class="row filterBox">
-        <ul class="collapsible " data-collapsible="accordion">
-        <div class="collapsible-header filter"><a (click)="filterOnClick(All, nothing)">All Animals</a></div>
-         <li>
-         <div class="collapsible-header">Date</div>
-           <div class="collapsible-body">
-             <button md-button class="filterButtons toastPositionLeft"></button>
-           </div>
-         </li>
-        </ul>
-      </div>
-      <div *ngFor="let meet of meets | async | filter:filterSelected:value">
+      <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required [(ngModel)]="term"  name="test">
+          <label class="label-icon" type="text" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+      <!-- <form id=search-profiles>
+        <label>Search By Title</label>
+        <input id="autocomplete-input" class="autocomplete" type="text" [(ngModel)]="term" name="test">
+      </form> -->
+      <div *ngFor="let meet of meets | async | searchBy:term">
         <div class="col s10 m6 offset-s1">
           <h2 class="header">{{meet.title}}</h2>
           <p class="dateTime">{{meet.time}} on {{meet.date}}</p>
@@ -29,7 +33,7 @@
                 <p>{{meet.info}}</p>
               </div>
               <div class="card-action">
-                <a (click)='viewMeet(meet)'>More Info</a>
+                <a (click)='viewMeet(meet)'><i class="material-icons">info</i>More Info</a>
               </div>
             </div>
           </div>
